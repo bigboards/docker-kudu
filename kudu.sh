@@ -9,11 +9,11 @@ export FLAGS_log_dir=/var/log/kudu
 case $1 in
 	"master")
 		EXEC=/usr/sbin/kudu-master
-		FLAGS_rpc_bind_addresses=0.0.0.0:7051
+		export FLAGS_rpc_bind_addresses=0.0.0.0:7051
 		;;
 	"tserver")
 		EXEC=/usr/sbin/kudu-tserver
-		FLAGS_rpc_bind_addresses=0.0.0.0:7050
+		export FLAGS_rpc_bind_addresses=0.0.0.0:7050
 		;;
 	*)
 		echo "Unknown daemon '$1'" && exit 1
